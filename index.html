@@ -1,64 +1,82 @@
-<!-- Save as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Cryptid Beard Oil</title>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=UnifrakturCook:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.1/default/snipcart.css" />
   <style>
     body {
       font-family: 'Crimson Pro', serif;
-      background: #0f0f0f;
+      background: #0f0f0f url('https://www.transparenttextures.com/patterns/dark-wood.png');
       color: #f0f0f0;
-      text-align: center;
-      padding: 40px;
       margin: 0;
+      text-align: center;
+      background-repeat: repeat;
     }
-    h1, h2 {
+    h1, h2, h3 {
       font-family: 'UnifrakturCook', cursive;
-      color: #66ff99;
+    }
+    header img {
+      height: 160px;
+      margin-top: 20px;
     }
     nav a {
+      display: inline-block;
       margin: 0 10px;
       color: #66ff99;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s ease;
     }
-    nav a:hover, button:hover {
-      text-shadow: 0 0 8px #66ff99;
-      box-shadow: 0 0 10px #66ff99, 0 0 20px #66ff99;
+    #hero {
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.6);
     }
-    button {
-      background: #66ff99;
-      border: none;
-      color: #0f0f0f;
+    .btn {
       padding: 10px 20px;
-      cursor: pointer;
+      background-color: #66ff99;
+      color: #000;
+      border: none;
       margin-top: 20px;
-      transition: 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    section {
+      padding: 40px 20px;
     }
     footer {
-      margin-top: 50px;
+      text-align: center;
       padding: 20px;
       background: #1c1c1c;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="Cryptid Logo.jpeg" alt="Cryptid Beard Care Logo">
     <h1>Cryptid Beard Oil</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
+      <a href="#" class="snipcart-checkout">🛒 Cart (<span class="snipcart-items-count"></span>)</a>
     </nav>
   </header>
-  <h2>Unleash the Legend in Your Beard</h2>
-  <p>Handcrafted oils inspired by myths like Sasquatch and Mothman.</p>
-  <button>Shop Now</button>
-  <footer>© 2025 Cryptid Beard Care | Groom Like a Legend</footer>
+
+  <section id="hero">
+    <h2>“Groom Like a Legend —<br>Where Shadows Whisper Secrets<br>And Every Scent Unleashes the Myth Within.”</h2>
+    <p>Summon your cryptid. Embrace the unknown</p>
+    <a href="products.html" class="btn">Shop Now</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Cryptid Beard Care | Groom Like a Legend</p>
+  </footer>
+
+  <script async src="https://cdn.snipcart.com/themes/v3.6.1/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="M2FkNmI3ZjYtZmUxYi00NDAxLTgyNDktMGI3MzZhNjJlOGUxNjM4ODY1MDIzMDI0MTk0NTU4"></div>
 </body>
 </html>
