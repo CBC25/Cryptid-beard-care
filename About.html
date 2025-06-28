@@ -89,3 +89,107 @@
   <div hidden id="snipcart" data-api-key="M2FkNmI3ZjYtZmUxYi00NDAxLTgyNDktMGI3MzZhNjJlOGUxNjM4ODY1MDIzMDI0MTk0NTU4"></div>
 </body>
 </html>
+<style>
+  .newsletter-container {
+    max-width: 400px;
+    margin: 30px auto;
+    background: #111;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #222;
+    font-family: 'Crimson Pro', serif;
+    color: #eee;
+    text-align: center;
+  }
+  .newsletter-container h3 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f8b500;
+  }
+  .newsletter-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .newsletter-input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+  }
+  .newsletter-btn {
+    background: #f8b500;
+    color: #111;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  .newsletter-btn:hover {
+    background: #e6a200;
+  }
+  .success-message {
+    display: none;
+    margin-top: 15px;
+    color: #8bc34a;
+    font-weight: 600;
+  }
+  .error-message {
+    color: #f44336;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: none;
+  }
+</style>
+
+<div class="newsletter-container" id="newsletter">
+  <h3>Join the Cryptid Coven</h3>
+  <p>Get mysterious updates, cryptid lore, and exclusive offers delivered monthly.</p>
+  <form id="newsletterForm" novalidate>
+    <input 
+      type="email" 
+      placeholder="Your email address" 
+      id="emailInput" 
+      class="newsletter-input" 
+      required 
+      aria-label="Email Address"
+    />
+    <div class="error-message" id="errorMsg"></div>
+    <button type="submit" class="newsletter-btn">Subscribe</button>
+  </form>
+  <div class="success-message" id="successMsg">Thank you for joining the Coven!</div>
+</div>
+
+<script>
+  const form = document.getElementById('newsletterForm');
+  const emailInput = document.getElementById('emailInput');
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    errorMsg.style.display = 'none';
+    successMsg.style.display = 'none';
+
+    const email = emailInput.value.trim();
+
+    // Basic email validation
+    if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      errorMsg.textContent = "Please enter a valid email address.";
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    // Here you would normally send 'email' to your email marketing service
+    // For demo, just show success message
+    successMsg.style.display = 'block';
+    form.reset();
+  });
+</script>
